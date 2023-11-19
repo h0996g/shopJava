@@ -28,6 +28,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     ListView list_users;
     TextView prixTotal;
+    TextView quantityTotal;
     ImageButton imageButton;
     TextView textView;
     @Override
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textDate);
         prixTotal=(TextView) findViewById(R.id.prixTotal);
+        quantityTotal=(TextView)findViewById(R.id.quantityTotal);
+//
+
 
 //        date
         Date c = Calendar.getInstance().getTime();
@@ -48,17 +52,17 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 //        -------------------------------------------------------------------------
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Connectez-vous");
+        getSupportActionBar().setTitle("Commande de : ");
         getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.grey));
         list_users = (ListView) findViewById(R.id.list_item);
         ArrayList<User> values = new ArrayList<>();
-        values.add(new User("food 1",  34,"f1",1));
+        values.add(new User("food 1",  34,"f1",0));
         values.add(new User("food 2",  12,"f2",0));
         values.add(new User("food 3",  5,"f3",0));
-        values.add(new User("food 4",  6.6,"f4",0));
+        values.add(new User("food 4",  6,"f4",0));
 
         values.add(new User("food 5",  1,"f5",0));
-        values.add(new User("food 6", 0.4,"f6",0));
+        values.add(new User("food 6", 4,"f6",0));
         values.add(new User("food 7",  3,"f7",0));
         values.add(new User("food 8",  8,"f3",0));
         values.add(new User("food 9",  10,"f5",0));
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 //        }
 
 //        prixTotal.setText(String.valueOf(allQ));
-        UserAdapter adapter = new UserAdapter(this, R.layout.item_user, values);
+        UserAdapter adapter = new UserAdapter(this, R.layout.item_user, values,prixTotal,quantityTotal);
 
         list_users.setAdapter(adapter);
 
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 Toast.makeText(MainActivity.this,selectItem,Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
 

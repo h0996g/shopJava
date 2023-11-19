@@ -16,14 +16,23 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class UserAdapter extends ArrayAdapter {
+    TextView prixTotal;
+    TextView quantityTotal;
 //    Context context;
     Activity activity;
+    int totalPrixCounter=0;
+    int quantityCounter=0;
     int resource;
-    public UserAdapter(@NonNull Activity context, int resource, @NonNull List objects) {
+    public UserAdapter(@NonNull Activity context, int resource, @NonNull List objects,TextView prixTotal,TextView quantityTotal) {
+
         super(context, resource, objects);
+        this.prixTotal=prixTotal;
+        this.quantityTotal=quantityTotal;
 //        this.context=context;
         this.activity=context;
         this.resource=resource;
@@ -77,10 +86,13 @@ public class UserAdapter extends ArrayAdapter {
                         quantity.setText(String.valueOf(value));
                         qua.setText(String.valueOf(value));
                 totalItemPrix.setText(String.valueOf(value*currentUser.getPrix())+" DZD");
+            totalPrixCounter=totalPrixCounter+currentUser.getPrix();
+                prixTotal.setText(String.valueOf(totalPrixCounter)+" DZD");
+                quantityCounter++;
+                quantityTotal.setText(String.valueOf(quantityCounter));
 
 
 
-//                quantity.setText(String.valueOf(currentUser.getQuantity()+1));
             }
         });
         min.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +106,10 @@ public class UserAdapter extends ArrayAdapter {
                     quantity.setText(String.valueOf(value));
                     qua.setText(String.valueOf(value));
                     totalItemPrix.setText(String.valueOf(value*currentUser.getPrix())+" DZD");
+                    totalPrixCounter=totalPrixCounter-currentUser.getPrix();
+                    prixTotal.setText(String.valueOf(totalPrixCounter)+" DZD");
+                    quantityCounter--;
+                    quantityTotal.setText(String.valueOf(quantityCounter));
 
                 }
 

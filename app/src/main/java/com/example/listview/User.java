@@ -2,7 +2,7 @@ package com.example.listview;
 
 public class User {
 private String url;
-    private double prix;
+    private int prix;
 
 private int quantity;
     private  String name;
@@ -15,7 +15,7 @@ private int quantity;
         this.quantity = quantity;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
 
@@ -28,7 +28,7 @@ private int quantity;
         this.url = url;
     }
 
-    public User(String name, double prix, String url,int quantity) {
+    public User(String name, int prix, String url,int quantity) {
         this.url=url;
         this.name = name;
 this.quantity=quantity;
@@ -48,11 +48,9 @@ this.quantity=quantity;
 
 
 
-    public double getPrix() {
+    public int getPrix() {
         return prix;
     }
 
-    public void setPrix(int prix) {
-        this.prix = prix;
-    }
+
 }

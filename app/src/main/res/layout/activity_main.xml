@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -56,7 +57,7 @@
                 />
         </RelativeLayout>
 
-        <ListView
+        <ExpandableListView
 
 
             android:layout_below="@+id/relativeTime"
@@ -65,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </ListView>
+        </ExpandableListView>
 
     </RelativeLayout>
 
@@ -94,12 +95,14 @@ app:fabCradleMargin="0dp"
                 android:layout_height="wrap_content"
 
                 android:layout_centerInParent="true"
-                android:text="35 DZD"
+                android:text="0 DZD"
                 android:textColor="#FFFFFF" />
 
         </RelativeLayout>
 
+
     </com.google.android.material.bottomappbar.BottomAppBar>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -109,7 +112,28 @@ app:fabCradleMargin="0dp"
         android:src="@drawable/baseline_add_shopping_cart_24"
         app:layout_anchor="@id/bottomAppBar"
 
+
+
         />
+
+    <TextView
+        android:id="@+id/quantityTotal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/rounded_textview"
+        android:text="0"
+        android:textSize="25dp"
+
+        app:layout_anchor="@+id/fab"
+
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/fab"
+        app:layout_constraintEnd_toEndOf="@id/fab"
+        app:layout_constraintStart_toEndOf="@id/fab"
+        app:layout_constraintTop_toTopOf="@id/fab"
+        tools:ignore="NotSibling" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
