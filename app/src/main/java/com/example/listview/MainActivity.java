@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Commande de : ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.grey));
         list_users = (ListView) findViewById(R.id.list_item);
         ArrayList<User> values = new ArrayList<>();

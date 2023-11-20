@@ -1,144 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/motherLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/image"
-
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/f1"
-        android:scaleType="fitXY"
-        />
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:id="@+id/itemClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/iconShop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_add_shopping_cart_24"
-        android:layout_centerVertical="true"
-        android:background="@null"/>
-    <TextView
-        android:id="@+id/nameFood"
-        android:layout_width="250px"
-        android:layout_height="wrap_content"
-        android:text="food one"
-        android:textSize="20sp"
-        android:layout_toRightOf="@+id/iconShop"
-        android:layout_centerVertical="true"
+        <ImageView
+            android:id="@+id/image"
 
-/>
-        <TextView
-            android:id="@+id/totalItemPrix"
-            android:paddingLeft="10dp"
-
-            android:layout_width="300px"
-            android:layout_height="wrap_content"
-            android:text="0.0DZD"
-            android:textSize="17sp"
-            android:layout_toRightOf="@+id/nameFood"
-
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/f1"
+            android:scaleType="fitXY"
             />
 
-
-        <LinearLayout
+        <RelativeLayout
+            android:layout_toRightOf="@id/image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/nameFood"
-            android:layout_centerVertical="true"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            >
-            <TextView
-                android:id="@+id/qua"
-
-
+            <ImageButton
+                android:id="@+id/iconShop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3"
-                android:textSize="17dp"
+                android:src="@drawable/baseline_add_shopping_cart_24"
+                android:layout_centerVertical="true"
+                android:background="@null"/>
+            <TextView
+                android:id="@+id/nameFood"
+                android:layout_width="250px"
+                android:layout_height="wrap_content"
+                android:text="food one"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/iconShop"
+                android:layout_centerVertical="true"
+
+                />
+            <TextView
+                android:id="@+id/totalItemPrix"
+                android:paddingLeft="10dp"
+
+                android:layout_width="300px"
+                android:layout_height="wrap_content"
+                android:text="0.0DZD"
+                android:textSize="17sp"
+                android:layout_toRightOf="@+id/nameFood"
+
+                />
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nameFood"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/qua"
+
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="17dp"
+
+
+
+
+                    />
+                <TextView
+                    android:id="@+id/darb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="17dp"
+                    />
+                <TextView
+                    android:id="@+id/prix1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.0"
+                    android:textSize="17dp"
+
+
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/dzd"
+
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" DZD"
+                    android:textSize="17dp"
+
+
+
+
+                    />
+
+            </LinearLayout>
+
+
+
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_add_circle_24"
+                android:background="@null"
+                android:layout_alignParentRight="true"
+
+                />
+            <ImageButton
+                android:id="@+id/min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/remove"
+                android:background="@null"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
 
 
                 />
             <TextView
-                android:id="@+id/darb"
+                android:id="@+id/quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="17dp"
-                />
-            <TextView
-                android:id="@+id/prix1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1.0"
-                android:textSize="17dp"
+                android:text="0"
+                android:layout_marginEnd="6dp"
+                android:layout_centerVertical="true"
 
-
+                android:layout_alignParentEnd="true"
 
 
                 />
-
-            <TextView
-                android:id="@+id/dzd"
-
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" DZD"
-                android:textSize="17dp"
-
-
-
-
-                />
-
-        </LinearLayout>
-
-
-
-        <ImageButton
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_add_circle_24"
-            android:background="@null"
-            android:layout_alignParentRight="true"
-
-            />
-        <ImageButton
-            android:id="@+id/min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/remove"
-            android:background="@null"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-
-
-            />
-        <TextView
-    android:id="@+id/quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:layout_marginEnd="6dp"
-            android:layout_centerVertical="true"
-
-            android:layout_alignParentEnd="true"
-
-
-            />
+        </RelativeLayout>
     </RelativeLayout>
+    
+
+    <LinearLayout
+        android:visibility="gone"
+
+        android:id="@+id/discLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:id="@+id/itemClicked2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/image2"
+
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/f1"
+                android:scaleType="fitXY"
+                />
+
+            <RelativeLayout
+                android:layout_toRightOf="@id/image2"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+
+                <TextView
+                    android:id="@+id/nameFood2"
+                    android:layout_width="250px"
+                    android:layout_height="wrap_content"
+                    android:text="food one"
+                    android:textSize="20sp"
+                    android:textColor="@color/bluee"
+                    />
+
+                    <TextView
+                        android:id="@+id/prix12"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textSize="17dp"
+                        android:layout_below="@id/nameFood2"
+
+                        />
+
+
+
+                    <EditText
+                        android:enabled="false"
+                        android:paddingTop="5dp"
+android:id="@+id/quantitysub"
+                        android:layout_below="@id/prix12"
+
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+
+                        android:drawableEnd="@drawable/baseline_1x_mobiledata_24"
+
+                        android:text="Quantity" />
+                <EditText
+                    android:enabled="false"
+
+                    android:paddingTop="5dp"
+                    android:id="@+id/colies"
+                    android:layout_below="@id/quantitysub"
+
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+
+                    android:drawableEnd="@drawable/baseline_1x_mobiledata_24"
+
+                    android:text="Colies" />
+
+                <EditText
+                    android:enabled="false"
+
+                    android:paddingTop="5dp"
+                    android:id="@+id/prixDeVonte"
+                    android:layout_below="@id/colies"
+
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+
+                    android:drawableEnd="@drawable/baseline_1x_mobiledata_24"
+
+                    android:text="Colies" />
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
