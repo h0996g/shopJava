@@ -5,15 +5,21 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
@@ -27,7 +33,9 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     ListView list_users;
-    TextView prixTotal;
+    FloatingActionButton fab ;
+    AlertDialog.Builder builder;
+    Button prixTotal;
     TextView quantityTotal;
     ImageButton imageButton;
     TextView textView;
@@ -36,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textDate);
-        prixTotal=(TextView) findViewById(R.id.prixTotal);
+        prixTotal=(Button) findViewById(R.id.prixTotal);
         quantityTotal=(TextView)findViewById(R.id.quantityTotal);
 //
 
@@ -62,11 +70,13 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         values.add(new User("food 3",  5,"f3",0));
         values.add(new User("food 4",  6,"f4",0));
 
-        values.add(new User("food 5",  1,"f5",0));
-        values.add(new User("food 6", 4,"f6",0));
-        values.add(new User("food 7",  3,"f7",0));
+        values.add(new User("food 5",  1,"f1",0));
+        values.add(new User("food 6", 4,"f3",0));
+        values.add(new User("food 7",  3,"f1",0));
         values.add(new User("food 8",  8,"f3",0));
-        values.add(new User("food 9",  10,"f5",0));
+        values.add(new User("food 9",  10,"f2",0));
+
+
 
 //        TextView prixTotal = (TextView) findViewById(R.id.prixTotal);
 //        int allQ=0;
@@ -79,6 +89,34 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         list_users.setAdapter(adapter);
 
+
+        fab=(FloatingActionButton)findViewById(R.id.fab);
+        builder=new AlertDialog.Builder(this);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Integer.parseInt(quantityTotal.getText().toString())>0){
+                    builder.setTitle("Alert!").setMessage("do want to continue").setCancelable(true).setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent=new Intent(MainActivity.this, MainActivity2.class);
+                            Bundle bundle = new Bundle();
+//        bundle.putSerializable("obj",user);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+                                }
+                            }
+
+                    ).show();
+                }
+
+            }
+        });
 
         list_users.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -115,7 +153,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         textView.setText(currentDateString);
     }
 
-    void add(int quantity){
-        quantity=quantity+1;
-    }
+
+
 }

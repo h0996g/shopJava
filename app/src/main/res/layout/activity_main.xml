@@ -21,11 +21,43 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/shopping_cart"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextAppearance="@style/ToolbarTitleText"
             />
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/toolbar"
+            android:layout_marginLeft="-167dp"
+            android:layout_marginTop="22dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search for items"
+            android:background="@color/shopping_cart"
+            app:searchIcon="@drawable/baseline_search_24"
+            android:gravity="end"
+            android:layoutDirection="rtl"
+            />
+
+        <ImageView
+            android:id="@+id/scanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_document_scanner_24"
+            android:layout_toEndOf="@+id/searchView"
+            android:layout_marginTop="20dp"
+            />
+
 
         <RelativeLayout
             android:id="@+id/relativeTime"
@@ -41,7 +73,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:background="@null"
-                android:src="@drawable/baseline_date_range_24"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/baseline_calendar_month_24"
 
                 />
 
@@ -64,7 +100,9 @@
 
             android:id="@+id/list_item"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="90dp"
+            >
 
         </ListView>
 
@@ -79,7 +117,8 @@
 app:fabCradleMargin="0dp"
         app:hideOnScroll="true"
 
-        app:backgroundTint="#3550fe"
+android:background="@color/shopping_cart"
+        app:backgroundTint="@color/bluee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -88,15 +127,17 @@ app:fabCradleMargin="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent">
 
-            <TextView
+            <Button
                 android:id="@+id/prixTotal"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_width="220dp"
+                android:layout_height="70dp"
                 android:layout_centerInParent="true"
-                android:text="0 DZD"
-                android:textColor="#FFFFFF" />
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/total_button"
+                android:text="0.00 DZD"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
 
         </RelativeLayout>
 

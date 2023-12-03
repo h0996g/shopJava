@@ -13,6 +13,11 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="shopping_cart">#039B9C</color>
+    <color name="remove_cart">#FF2D2D</color>
+    <color name="border">#8C8C8C</color>
+
+    <color name="total_button">#004D4E</color>
 
     <color name="orange">#FFA500</color>
     <color name="colorPrimary">#008577</color>
